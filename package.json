@@ -1,0 +1,47 @@
+{
+  "name": "projectname",
+  "version": "1.0.0",
+  "description": "[PROJECT_NAME_DESCRIPTION]",
+  "author": "jthawme",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate && gulp",
+    "precommit": "yarn lint",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "deploy": "nuxt generate && aws s3 sync dist/. s3:/s/[PROJECT_BUCKET_NAME] --delete",
+    "functions:offline": "serverless offline --httpPort 3001",
+    "functions": "serverless deploy",
+    "images": "node tools/crunchImages.js"
+  },
+  "dependencies": {
+    "@nuxtjs/markdownit": "^2.0.0",
+    "@nuxtjs/style-resources": "^1.2.1",
+    "@nuxtjs/svg": "^0.3.0",
+    "date-fns": "^2.29.3",
+    "normalize.css": "^8.0.1",
+    "nuxt": "^2.15.8",
+    "short-unique-id": "^4.4.4",
+    "smoothscroll-polyfill": "^0.4.4",
+    "underscore": "^1.11.0",
+    "v-scroll-lock": "^1.2.0",
+    "vue-resize-observer": "^1.0.37"
+  },
+  "devDependencies": {
+    "@nuxtjs/pwa": "^3.3.2",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-loader": "^3.0.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-vue": "^6.0.1",
+    "gulp": "^4.0.2",
+    "gulp-html-minifier": "^0.1.8",
+    "node-sass": "^4.13.0",
+    "nodemon": "^2.0.1",
+    "prettier": "^1.19.1",
+    "sass-loader": "^8.0.0"
+  }
+}
