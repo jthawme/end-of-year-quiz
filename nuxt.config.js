@@ -56,7 +56,7 @@ export default {
       },
       {
         name: "twitter:image:src",
-        content: `${PROJECT_DOMAIN}/social/sharecard-twitter.png`,
+        content: `${PROJECT_DOMAIN}/social/sharecard-twitter.jpg`,
         hid: "twitter-image"
       },
       {
@@ -73,7 +73,7 @@ export default {
       {
         name: "og:image",
         property: "og:image",
-        content: `${PROJECT_DOMAIN}/social/sharecard-facebook.png`,
+        content: `${PROJECT_DOMAIN}/social/sharecard-facebook.jpg`,
         hid: "og-image"
       },
       {
