@@ -10,7 +10,7 @@
           >{{ item.message }}</MessageBlock
         >
         <div v-else-if="isManual(item) && item.options" class="message-list">
-          <MessageFootnote v-if="item.last" :theme="item.reply">
+          <MessageFootnote v-if="item.last" :theme="item.reply" sticky>
             <span>Click one of the messages to choose</span>
           </MessageFootnote>
           <MessageBlock
@@ -37,7 +37,7 @@
       </div>
 
       <div v-if="done && !!result">
-        {{ result }}
+        <Result :result="result" />
       </div>
     </DeviceWrap>
   </div>
@@ -48,8 +48,9 @@ import { format } from "date-fns";
 
 import DeviceWrap from "~/components/DeviceWrap.vue";
 
-import { questions, SCRIPT_TYPE } from "~/assets/js/questions";
+import { ANSWER, questions, SCRIPT_TYPE } from "~/assets/js/questions";
 import { timer } from "~/assets/js/utils";
+import Result from "~/components/Result.vue";
 
 const convertMessage = (message, info) => {
   if (typeof message === "undefined") {
@@ -87,12 +88,19 @@ const getMode = answers => {
 };
 
 export default {
-  components: { DeviceWrap },
+  components: { DeviceWrap, Result },
   data() {
     return {
-      index: -1,
       list: [],
+      index: -1,
       answers: [],
+      // index: 46,
+      // answers: [
+      //   {
+      //     value: ANSWER.CLIMATE_CHANGE,
+      //     label: `Fighting for a social cause like climate change`
+      //   }
+      // ],
       typing: "from",
       done: false
     };
@@ -119,6 +127,22 @@ export default {
   },
   mounted() {
     this.playNext();
+
+    // console.log(
+    //   questions
+    //     .filter(item => item.reply === REPLY_TYPE.OPTION)
+    //     .reduce((p, c) => {
+    //       c.options.forEach(opt => {
+    //         if (!p[opt.value]) {
+    //           p[opt.value] = 0;
+    //         }
+
+    //         p[opt.value]++;
+    //       });
+
+    //       return p;
+    //     }, {})
+    // );
   },
   methods: {
     async playNext() {

@@ -72,8 +72,14 @@ export default {
   isolation: isolate;
   text-align: left;
 
+  max-width: 90%;
+
   &-inner {
     padding: 1em;
+  }
+
+  @include tablet {
+    max-width: 50%;
   }
 }
 

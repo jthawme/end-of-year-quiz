@@ -1,5 +1,5 @@
 <template>
-  <div class="message-note" :class="{ [theme]: true }">
+  <div class="message-note" :class="{ [theme]: true, sticky }">
     <slot />
   </div>
 </template>
@@ -8,7 +8,13 @@
 import { MessageBlockCommon } from "./common";
 
 export default {
-  mixins: [MessageBlockCommon]
+  mixins: [MessageBlockCommon],
+  props: {
+    sticky: {
+      type: Boolean,
+      default: false
+    }
+  }
 };
 </script>
 
@@ -18,6 +24,15 @@ export default {
 
   padding: 0 1em;
   margin: 0 0 0.5rem;
+
+  &.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    backdrop-filter: blur(10px);
+  }
 }
 
 .to,

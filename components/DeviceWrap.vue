@@ -107,6 +107,7 @@ export default {
   width: 100%;
 
   @include tablet {
+    width: calc(100% - 40px);
     max-width: 950px;
     margin: 20px auto;
 
