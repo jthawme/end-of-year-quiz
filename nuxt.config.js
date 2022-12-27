@@ -1,3 +1,5 @@
+import { ANSWER } from "./assets/js/questions";
+
 // TODO: (Ramdane) read this from a custom config file, with environment configuration
 const PROJECT_TITLE = "2022 Quiz";
 const PROJECT_SHORT_TITLE = "2022 Quiz";
@@ -171,5 +173,9 @@ export default {
       name: PROJECT_TITLE,
       short_name: PROJECT_SHORT_TITLE
     }
+  },
+
+  generate: {
+    routes: Object.values(ANSWER).map(k => `/result/${k}`)
   }
 };

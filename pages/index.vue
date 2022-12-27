@@ -151,7 +151,7 @@ export default {
       const current = questions[this.index];
 
       if (!current) {
-        console.log("done", this.contextualInfo);
+        // console.log("done", this.contextualInfo);
         this.done = true;
         return;
       }

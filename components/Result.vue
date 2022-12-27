@@ -41,7 +41,7 @@ export default {
       return `I took this quiz to see what event in 2022 I was, omg!!`;
     },
     url() {
-      return `https://2022.jthaw.club`;
+      return `https://2022.jthaw.club/result/${this.result}`;
     },
     via() {
       return `jthawme`;
