@@ -106,7 +106,13 @@ export default {
         rel: "stylesheet"
       }
     ],
-    script: []
+    script: [
+      {
+        defer: true,
+        "data-domain": "2022.jthaw.club",
+        src: "https://plausible.io/js/script.js"
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
