@@ -106,11 +106,17 @@ export default {
         rel: "stylesheet"
       }
     ],
+    __dangerouslyDisableSanitizers: ["script"],
     script: [
       {
         defer: true,
         "data-domain": "2022.jthaw.club",
         src: "https://plausible.io/js/script.js"
+      },
+      {
+        innerHTML: `window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`,
+        type: "text/javascript",
+        charset: "utf-8"
       }
     ]
   },

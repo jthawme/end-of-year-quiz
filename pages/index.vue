@@ -152,6 +152,14 @@ export default {
 
       if (!current) {
         // console.log("done", this.contextualInfo);
+        window.plausible("result", {
+          props: {
+            result: this.contextualInfo.result,
+            answers: JSON.stringify(
+              this.contextualInfo.answers.map(item => item.value)
+            )
+          }
+        });
         this.done = true;
         return;
       }

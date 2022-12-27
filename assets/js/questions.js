@@ -630,7 +630,7 @@ export const questions = [
     type: SCRIPT_TYPE.AUTOMATIC,
     reply: REPLY_TYPE.FROM,
     message: () => {
-      return "2022 has been a tough year, but I know myself continue to be very lucky in many ways and I don't want to take that for granted.";
+      return "2022 has been a tough year, but I know that I myself continue to be very lucky in many ways and I don't want to take that for granted.";
     },
     typeDelay: 600,
     readDelay: 3200
