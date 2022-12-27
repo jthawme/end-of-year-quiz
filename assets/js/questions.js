@@ -23,7 +23,7 @@ export const ANSWER = {
 
 export const ANSWER_LARGE = {
   [ANSWER.DEATHS]: {
-    media: `/images/${ANSWER.UKRAINE}.jpg`,
+    media: `/images/${ANSWER.DEATHS}.jpg`,
     message: `Love em or hate em, it doesn't matter anymore because they're dead. 2022 saw a number of notable deaths, pictured are of course, Queen Elizabeth II which they were willing to admit had died in the end, Gorbachev and the assassinated Shinzo Abe`
   },
   [ANSWER.PRIME_MINISTERS]: {
